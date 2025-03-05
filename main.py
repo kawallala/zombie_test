@@ -29,7 +29,7 @@ def main():
                 # print(1)
             case 2:
                 print("Avanzando simulacion")
-                # building.advance()
+                building.advance()
                 print(2)
             case 99:
                 return

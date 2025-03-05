@@ -4,11 +4,16 @@ import random
 
 class Floor:
     def __init__(self, floor_number: int, rooms_per_floor: int) -> None:
-        self.rooms = []
-        self.floor_number = floor_number
+        self.rooms: list[Room] = []
+        self.floor_number: int = floor_number
         for i in range(rooms_per_floor):
-            zombie = random.choice([True, False])
+            zombie = False
+            if random.randrange(0, 100) < 10:
+                zombie = True
             self.rooms.append(Room(floor_number, i, zombie))
+
+    def set_room_sensor(self, room: int, zombie: bool) -> None:
+        self.rooms[room].set_sensor(zombie)
 
     def print(self):
         str_top = ""
