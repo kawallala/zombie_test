@@ -26,11 +26,9 @@ def main():
             case 1:
                 print("Estado edificio")
                 building.print()
-                # print(1)
             case 2:
                 print("Avanzando simulacion")
                 building.advance()
-                print(2)
             case 99:
                 return
             case default:
