@@ -1,20 +1,20 @@
 from building import Building
 
 
-def main():
+def main() -> None:
     print("Bienvenido a esta simulacion de un edificio infectado por zombies")
     print("Primero, configuremos el edificio")
     while True:
         try:
             floors = int(input("Cuantos pisos tendra tu edificio? "))
             break
-        except:
+        except Exception:
             print("por favor ingresa un numero")
     while True:
         try:
             rooms_per_floor = int(input("Cuantas habitaciones habran por piso? "))
             break
-        except:
+        except Exception:
             print("Por favor ingresa un numero")
     building = Building(floors, rooms_per_floor)
 
@@ -26,7 +26,7 @@ def main():
         print("99- Salir")
         try:
             option = int(input())
-        except:
+        except Exception:
             option = None
         match option:
             case 1:
@@ -37,7 +37,7 @@ def main():
                 building.advance()
             case 99:
                 return
-            case default:
+            case _:
                 print("Opcion no disponible, intenta otra vez")
 
 

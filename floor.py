@@ -1,9 +1,10 @@
 from room import Room
+from typing import Self
 import random
 
 
 class Floor:
-    def __init__(self, floor_number: int, rooms_per_floor: int) -> None:
+    def __init__(self: Self, floor_number: int, rooms_per_floor: int) -> None:
         self._rooms: list[Room] = []
         self.floor_number: int = floor_number
         for i in range(rooms_per_floor):
@@ -12,10 +13,13 @@ class Floor:
                 zombie = True
             self._rooms.append(Room(floor_number, i, zombie))
 
-    def set_room_sensor(self, room: int, zombie: bool) -> None:
+    def get_rooms(self: Self) -> list[Room]:
+        return self._rooms
+
+    def set_room_sensor(self: Self, room: int, zombie: bool) -> None:
         self._rooms[room].set_sensor(zombie)
 
-    def print(self):
+    def print(self: Self) -> None:
         str_top = ""
         str_middle = ""
         str_bottom = ""
