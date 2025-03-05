@@ -2,14 +2,20 @@ from building import Building
 
 
 def main():
-    print(
-        "Bienvenido a esta simulacion de un edificio infectado por zombies, tu objetivo es evitar inunden todos los cuartos"
-    )
-    print("Pero primero, configuremos el edificio")
-    floors = int(input("Cuantos pisos tendra tu edificio? "))
-    rooms_per_floor = int(input("Cuantas habitaciones habran por piso? "))
-    print(floors)
-    print(rooms_per_floor)
+    print("Bienvenido a esta simulacion de un edificio infectado por zombies")
+    print("Primero, configuremos el edificio")
+    while True:
+        try:
+            floors = int(input("Cuantos pisos tendra tu edificio? "))
+            break
+        except:
+            print("por favor ingresa un numero")
+    while True:
+        try:
+            rooms_per_floor = int(input("Cuantas habitaciones habran por piso? "))
+            break
+        except:
+            print("Por favor ingresa un numero")
     building = Building(floors, rooms_per_floor)
 
     # Main loop
