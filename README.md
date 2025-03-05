@@ -3,7 +3,7 @@
 Basta con clonar el repositorio, luego acceder a la carpeta de este y ejecutar el programa mediante la instalacion de python en la maquina.
 
 ```
-git clone 
+git clone https://github.com/kawallala/zombie_test
 cd zombie_test/
 python3 main.py
 ```
